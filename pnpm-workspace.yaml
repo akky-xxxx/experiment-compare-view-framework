@@ -1,0 +1,9 @@
+catalogMode: "strict"
+
+minimumReleaseAge: 10080
+
+packages:
+  - frameworks/**
+  - server/**
+
+saveExact: true
