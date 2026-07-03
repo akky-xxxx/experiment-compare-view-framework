@@ -1,5 +1,15 @@
 catalogMode: "strict"
 
+catalog:
+  '@commitlint/cli': 21.1.0
+  '@commitlint/config-conventional': 21.1.0
+  '@types/node': 26.0.1
+  husky: 9.1.7
+  npm-run-all2: 9.0.2
+  prettier: 3.8.4
+  sort-package-json: 4.0.0
+  typescript: 6.0.3
+
 minimumReleaseAge: 10080
 
 packages:
