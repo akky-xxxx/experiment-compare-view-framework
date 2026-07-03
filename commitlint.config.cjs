@@ -1,4 +1,4 @@
-const DIRECTORIES = ["*", "root"]
+const DIRECTORIES = ["*", "root", "server"]
 
 module.exports = {
   extends: ["@commitlint/config-conventional"],
