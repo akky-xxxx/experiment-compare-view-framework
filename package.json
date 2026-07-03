@@ -2,12 +2,13 @@
   "name": "experiment-compare-view-framework",
   "version": "1.0.0",
   "description": "",
-  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b",
-  "engines": {
-    "node": "26.4.0",
-    "yarn": "use pnpm instead",
-    "npm": "use pnpm instead"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akky-xxxx/experiment-compare-view-framework"
   },
+  "license": "UNLICENSED",
+  "author": "akky-xxxx",
+  "type": "module",
   "scripts": {
     "bootstrap": "run-s bootstrap:husky",
     "bootstrap:husky": "pnpm husky init",
@@ -18,13 +19,6 @@
     "lint:prettier": "prettier --check \"./*.{cjs,mts,yaml}\"",
     "lint:sort-package-json": "pnpm fix:sort-package-json --check"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/akky-xxxx/experiment-compare-view-framework"
-  },
-  "author": "akky-xxxx",
-  "license": "UNLICENSED",
-  "type": "module",
   "devDependencies": {
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
@@ -34,5 +28,11 @@
     "prettier": "catalog:",
     "sort-package-json": "catalog:",
     "typescript": "catalog:"
+  },
+  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b",
+  "engines": {
+    "node": "26.4.0",
+    "npm": "use pnpm instead",
+    "yarn": "use pnpm instead"
   }
 }

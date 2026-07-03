@@ -1,4 +1,4 @@
-catalogMode: "strict"
+catalogMode: 'strict'
 
 catalog:
   '@commitlint/cli': 21.1.0
