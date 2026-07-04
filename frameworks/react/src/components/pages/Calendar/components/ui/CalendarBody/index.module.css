@@ -1,0 +1,17 @@
+.root {
+  display: grid;
+  row-gap: 8px;
+}
+
+.header {
+  display: flex;
+  column-gap: 4px;
+}
+
+.ul {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: var(--foreground);
+  padding: 1px;
+}
