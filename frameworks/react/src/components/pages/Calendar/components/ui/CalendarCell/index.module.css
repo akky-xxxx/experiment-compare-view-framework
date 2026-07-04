@@ -4,6 +4,7 @@
   padding: 8px;
   display: grid;
   row-gap: 8px;
+  opacity: var(--opacity);
 }
 
 .header {
@@ -33,4 +34,6 @@
   position: absolute;
   inset: 0;
   z-index: 10;
+  border: none;
+  background-color: transparent;
 }

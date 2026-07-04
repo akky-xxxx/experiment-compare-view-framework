@@ -14,28 +14,28 @@ export const CalendarBody: FC = () => {
 
       <ul className={styles.ul}>
         <li>
-          <CalendarCell />
+          <CalendarCell isCurrentMonth={false} />
         </li>
         <li>
-          <CalendarCell />
+          <CalendarCell isCurrentMonth={false} />
         </li>
         <li>
-          <CalendarCell />
+          <CalendarCell isCurrentMonth={true} />
         </li>
         <li>
-          <CalendarCell />
+          <CalendarCell isCurrentMonth={true} />
         </li>
         <li>
-          <CalendarCell />
+          <CalendarCell isCurrentMonth={true} />
         </li>
         <li>
-          <CalendarCell />
+          <CalendarCell isCurrentMonth={true} />
         </li>
         <li>
-          <CalendarCell />
+          <CalendarCell isCurrentMonth={true} />
         </li>
         <li>
-          <CalendarCell />
+          <CalendarCell isCurrentMonth={true} />
         </li>
       </ul>
     </div>

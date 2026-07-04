@@ -2,9 +2,22 @@ import styles from "./index.module.css"
 
 import type { FC } from "react"
 
-export const CalendarCell: FC = () => {
+type Props = {
+  isCurrentMonth: boolean
+}
+
+const getCellColor = (isCurrentMonth: boolean) => {
+  return isCurrentMonth ? 1 : 0.6
+}
+
+export const CalendarCell: FC<Props> = (props) => {
+  const { isCurrentMonth } = props
+  const cellColor = {
+    "--opacity": getCellColor(isCurrentMonth),
+  }
+
   return (
-    <div className={styles.root}>
+    <div className={styles.root} style={cellColor}>
       <header className={styles.header}>12</header>
 
       <ul className={styles.ul}>
