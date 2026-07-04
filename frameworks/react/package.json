@@ -12,7 +12,7 @@
     "fix:stylelint": "pnpm lint:stylelint --fix",
     "lint": "run-p \"lint:*\" -c --aggregate-output",
     "lint:eslint": "eslint",
-    "lint:prettier": "prettier --check \"./*.{cjs,mts,ts,tsx}\"",
+    "lint:prettier": "prettier --check \"./**/*.{cjs,mts,ts,tsx}\"",
     "lint:sort-package-json": "pnpm fix:sort-package-json --check",
     "lint:stylelint": "stylelint \"src/**/*.css\"",
     "start": "next start",
