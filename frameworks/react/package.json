@@ -7,19 +7,34 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "fix": "run-p \"fix:*\" -c --aggregate-output",
+    "fix:prettier": "pnpm lint:prettier --write",
+    "fix:sort-package-json": "sort-package-json ./package.json",
+    "fix:stylelint": "pnpm lint:stylelint --fix",
+    "lint:eslint": "eslint",
+    "lint": "run-p \"lint:*\" -c --aggregate-output",
+    "lint:prettier": "prettier --check \"./*.{cjs,mts,ts,tsx}\"",
+    "lint:sort-package-json": "pnpm fix:sort-package-json --check",
+    "lint:stylelint": "stylelint \"src/**/*.css\""
   },
   "dependencies": {
-    "next": "16.2.9",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "next": "catalog:react",
+    "react": "catalog:react",
+    "react-dom": "catalog:react"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.9",
-    "typescript": "^5"
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "eslint": "catalog:production-infrastructure",
+    "eslint-config-next": "catalog:react",
+    "eslint-config-prettier": "catalog:",
+    "npm-run-all2": "catalog:",
+    "prettier": "catalog:",
+    "sort-package-json": "catalog:",
+    "stylelint": "catalog:react",
+    "stylelint-config-css-modules": "catalog:react",
+    "stylelint-config-standard": "catalog:react",
+    "typescript": "catalog:production-infrastructure"
   }
 }
