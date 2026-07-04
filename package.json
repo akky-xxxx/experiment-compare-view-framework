@@ -17,7 +17,8 @@
     "fix:sort-package-json": "sort-package-json ./package.json",
     "lint": "run-p \"lint:*\" -c --aggregate-output",
     "lint:prettier": "prettier --check \"./*.{cjs,mts,yaml}\"",
-    "lint:sort-package-json": "pnpm fix:sort-package-json --check"
+    "lint:sort-package-json": "pnpm fix:sort-package-json --check",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "catalog:",

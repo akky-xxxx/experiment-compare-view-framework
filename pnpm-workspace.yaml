@@ -19,6 +19,25 @@ catalogs:
     axios: 1.18.1
     eslint: 9.39.4
     typescript: 6.0.3
+    typescript-eslint: 8.62.0
+  angular:
+    '@angular-eslint/builder': 22.0.0
+    '@angular/build': 22.0.4
+    '@angular/cli': 22.0.4
+    '@angular/common': 22.0.4
+    '@angular/compiler': 22.0.4
+    '@angular/compiler-cli': 22.0.4
+    '@angular/core': 22.0.4
+    '@angular/forms': 22.0.4
+    '@angular/platform-browser': 22.0.4
+    '@angular/router': 22.0.4
+    angular-eslint: ^22.0.0
+    jsdom: 29.1.1
+    rxjs: 7.8.2
+    stylelint-config-standard: 40.0.0
+    stylelint: 17.14.0
+    tslib: 2.8.1
+    vitest: 4.1.9
   react:
     '@chromatic-com/storybook': 5.2.1
     '@storybook/addon-a11y': 10.4.6
@@ -52,6 +71,9 @@ packages:
 saveExact: true
 
 allowBuilds:
+  '@parcel/watcher': true
   esbuild: true
+  lmdb: true
+  msgpackr-extract: true
   sharp: true
   unrs-resolver: true
