@@ -1,5 +1,9 @@
 import { Top } from "@/components/pages/Top"
 
-export default function Home() {
+import type { FC } from "react"
+
+const Home: FC = () => {
   return <Top />
 }
+
+export default Home
