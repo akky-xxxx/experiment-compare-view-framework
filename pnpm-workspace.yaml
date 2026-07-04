@@ -16,6 +16,7 @@ catalog:
 
 catalogs:
   production-infrastructure:
+    axios: 1.18.1
     eslint: 9.39.4
     typescript: 6.0.3
   react:
