@@ -1,4 +1,4 @@
-import { CalendarBody } from "./components/ui/CalendarBody"
+import { CalendarBody } from "./components/features/CalendarBody"
 
 import type { FC } from "react"
 

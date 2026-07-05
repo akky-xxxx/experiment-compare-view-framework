@@ -1,10 +1,11 @@
-import { CalendarCell } from "@/components/pages/Calendar/components/ui/CalendarCell"
+import { CalendarCell } from "./components/features/CalendarCell"
+import { TaskList } from "./components/features/TaskList"
+import { MonthSelector } from "./components/layouts/MonthSelector"
+import { SiblingMonthButton } from "./components/ui/SiblingMonthButton"
+
 import styles from "./index.module.css"
 
 import type { FC } from "react"
-import { TaskList } from "@/components/pages/Calendar/components/ui/TaskList"
-import { MonthSelector } from "@/components/pages/Calendar/components/layouts/MonthSelector"
-import { SiblingMonthButton } from "@/components/pages/Calendar/components/ui/SiblingMonthButton"
 
 const Dates = [
   {
