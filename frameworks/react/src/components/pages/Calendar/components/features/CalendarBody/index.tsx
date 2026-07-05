@@ -2,48 +2,23 @@ import { CalendarCell } from "./components/features/CalendarCell"
 import { TaskList } from "./components/features/TaskList"
 import { MonthSelector } from "./components/layouts/MonthSelector"
 import { SiblingMonthButton } from "./components/ui/SiblingMonthButton"
+import { getDates } from "./modules/getDates"
 
 import styles from "./index.module.css"
 
 import type { FC } from "react"
 
-const Dates = [
-  {
-    date: "2022-12-31",
-    taskList: [],
-  },
-  {
-    date: "2023-01-01",
-    taskList: ["task1"],
-  },
-  {
-    date: "2023-01-02",
-    taskList: ["task2"],
-  },
-  {
-    date: "2023-01-03",
-    taskList: ["task3", "task4", "task4-2"],
-  },
-  {
-    date: "2023-01-04",
-    taskList: [],
-  },
-  {
-    date: "2023-01-05",
-    taskList: [],
-  },
-  {
-    date: "2023-01-06",
-    taskList: [],
-  },
-  {
-    date: "2023-01-07",
-    taskList: [],
-  },
-] as const
+type Props = {
+  currentMonth: number
+  currentYear: number
+}
 
-export const CalendarBody: FC = () => {
-  const currentMonth = 1
+export const CalendarBody: FC<Props> = (props) => {
+  const { currentMonth, currentYear } = props
+  const dates = getDates(currentYear, currentMonth).map((date) => ({
+    date: date.toString(),
+    taskList: [],
+  }))
 
   return (
     <div className={styles.root}>
@@ -54,7 +29,7 @@ export const CalendarBody: FC = () => {
       />
 
       <ul className={styles.ul}>
-        {Dates.map((datum) => {
+        {dates.map((datum) => {
           const { date, taskList } = datum
           const isCurrentMonth = new Date(date).getMonth() + 1 === currentMonth
 
