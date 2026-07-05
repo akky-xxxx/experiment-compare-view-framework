@@ -3,6 +3,7 @@ import styles from "./index.module.css"
 import type { FC } from "react"
 
 type Props = {
+  today: string
   isCurrentMonth: boolean
 }
 
@@ -11,14 +12,15 @@ const getCellColor = (isCurrentMonth: boolean) => {
 }
 
 export const CalendarCell: FC<Props> = (props) => {
-  const { isCurrentMonth } = props
+  const { today, isCurrentMonth } = props
   const cellColor = {
     "--opacity": getCellColor(isCurrentMonth),
   }
+  const currentDate = new Date(today).getDate()
 
   return (
     <div className={styles.root} style={cellColor}>
-      <header className={styles.header}>12</header>
+      <header className={styles.header}>{currentDate}</header>
 
       <ul className={styles.ul}>
         <li className={styles.li}>
