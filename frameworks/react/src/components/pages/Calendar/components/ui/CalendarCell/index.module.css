@@ -5,29 +5,13 @@
   display: grid;
   row-gap: 8px;
   opacity: var(--opacity);
+  height: 100%;
 }
 
 .header {
   position: relative;
   z-index: 20;
   pointer-events: none;
-}
-
-.ul {
-  display: grid;
-  row-gap: 4px;
-  z-index: 20;
-}
-
-.li {
-  overflow: hidden;
-}
-
-.liButton {
-  width: 100%;
-  text-align: left;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .cellButton {

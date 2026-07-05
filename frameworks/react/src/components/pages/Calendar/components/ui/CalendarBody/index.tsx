@@ -2,31 +2,40 @@ import { CalendarCell } from "@/components/pages/Calendar/components/ui/Calendar
 import styles from "./index.module.css"
 
 import type { FC } from "react"
+import { TaskList } from "@/components/pages/Calendar/components/ui/TaskList"
 
 const Dates = [
   {
     date: "2022-12-31",
+    taskList: [],
   },
   {
     date: "2023-01-01",
+    taskList: ["task1"],
   },
   {
     date: "2023-01-02",
+    taskList: ["task2"],
   },
   {
     date: "2023-01-03",
+    taskList: ["task3", "task4"],
   },
   {
     date: "2023-01-04",
+    taskList: [],
   },
   {
     date: "2023-01-05",
+    taskList: [],
   },
   {
     date: "2023-01-06",
+    taskList: [],
   },
   {
     date: "2023-01-07",
+    taskList: [],
   },
 ] as const
 
@@ -43,12 +52,16 @@ export const CalendarBody: FC = () => {
 
       <ul className={styles.ul}>
         {Dates.map((datum) => {
-          const { date } = datum
+          const { date, taskList } = datum
           const isCurrentMonth = new Date(date).getMonth() + 1 === currentMonth
 
           return (
             <li key={date}>
-              <CalendarCell today={date} isCurrentMonth={isCurrentMonth} />
+              <CalendarCell
+                today={date}
+                isCurrentMonth={isCurrentMonth}
+                taskListComponent={<TaskList taskList={taskList} />}
+              />
             </li>
           )
         })}

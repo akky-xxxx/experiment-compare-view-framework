@@ -1,10 +1,11 @@
 import styles from "./index.module.css"
 
-import type { FC } from "react"
+import type { FC, ReactElement } from "react"
 
 type Props = {
   today: string
   isCurrentMonth: boolean
+  taskListComponent: ReactElement
 }
 
 const getCellColor = (isCurrentMonth: boolean) => {
@@ -12,7 +13,7 @@ const getCellColor = (isCurrentMonth: boolean) => {
 }
 
 export const CalendarCell: FC<Props> = (props) => {
-  const { today, isCurrentMonth } = props
+  const { today, isCurrentMonth, taskListComponent } = props
   const cellColor = {
     "--opacity": getCellColor(isCurrentMonth),
   }
@@ -22,14 +23,7 @@ export const CalendarCell: FC<Props> = (props) => {
     <div className={styles.root} style={cellColor}>
       <header className={styles.header}>{currentDate}</header>
 
-      <ul className={styles.ul}>
-        <li className={styles.li}>
-          <button className={styles.liButton}>schedule1</button>
-        </li>
-        <li className={styles.li}>
-          <button className={styles.liButton}>schedule2</button>
-        </li>
-      </ul>
+      {taskListComponent}
 
       <button className={styles.cellButton}></button>
     </div>
