@@ -3,6 +3,7 @@ import styles from "./index.module.css"
 
 import type { FC } from "react"
 import { TaskList } from "@/components/pages/Calendar/components/ui/TaskList"
+import { MonthSelector } from "@/components/pages/Calendar/components/layouts/MonthSelector"
 
 const Dates = [
   {
@@ -44,11 +45,11 @@ export const CalendarBody: FC = () => {
 
   return (
     <div className={styles.root}>
-      <header className={styles.header}>
-        <button>&lt;</button>
-        <div>{currentMonth}月</div>
-        <button>&gt;</button>
-      </header>
+      <MonthSelector
+        monthElement={<div>{currentMonth}月</div>}
+        previousButtonElement={<button>&lt;</button>}
+        nextButtonElement={<button>&gt;</button>}
+      />
 
       <ul className={styles.ul}>
         {Dates.map((datum) => {

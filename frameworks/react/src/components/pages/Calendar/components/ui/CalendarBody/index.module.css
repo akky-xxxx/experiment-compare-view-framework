@@ -3,11 +3,6 @@
   row-gap: 8px;
 }
 
-.header {
-  display: flex;
-  column-gap: 4px;
-}
-
 .ul {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
