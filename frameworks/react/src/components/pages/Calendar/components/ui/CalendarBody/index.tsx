@@ -1,9 +1,12 @@
+"use client"
+
 import { CalendarCell } from "@/components/pages/Calendar/components/ui/CalendarCell"
 import styles from "./index.module.css"
 
 import type { FC } from "react"
 import { TaskList } from "@/components/pages/Calendar/components/ui/TaskList"
 import { MonthSelector } from "@/components/pages/Calendar/components/layouts/MonthSelector"
+import { SiblingMonthButton } from "@/components/pages/Calendar/components/ui/SiblingMonthButton"
 
 const Dates = [
   {
@@ -47,8 +50,12 @@ export const CalendarBody: FC = () => {
     <div className={styles.root}>
       <MonthSelector
         monthElement={<div>{currentMonth}月</div>}
-        previousButtonElement={<button>&lt;</button>}
-        nextButtonElement={<button>&gt;</button>}
+        previousButtonElement={
+          <SiblingMonthButton direction="previous" handleClick={() => {}} />
+        }
+        nextButtonElement={
+          <SiblingMonthButton direction="next" handleClick={() => {}} />
+        }
       />
 
       <ul className={styles.ul}>
