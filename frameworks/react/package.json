@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "axios": "catalog:production-infrastructure",
+    "date-fns": "catalog:production-infrastructure",
     "next": "catalog:react",
     "react": "catalog:react",
     "react-dom": "catalog:react"
