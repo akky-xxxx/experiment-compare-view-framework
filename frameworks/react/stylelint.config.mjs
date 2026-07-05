@@ -1,5 +1,6 @@
 /** @type {import('stylelint').Config} */
 const config = {
+  ignoreFiles: ["src/app/reset.css"],
   extends: ["stylelint-config-standard", "stylelint-config-css-modules"],
   rules: {
     "selector-class-pattern": "^[a-z]+[a-zA-Z0-9]*$"
