@@ -1,5 +1,3 @@
-"use client"
-
 import { CalendarCell } from "@/components/pages/Calendar/components/ui/CalendarCell"
 import styles from "./index.module.css"
 
@@ -50,12 +48,8 @@ export const CalendarBody: FC = () => {
     <div className={styles.root}>
       <MonthSelector
         monthElement={<div>{currentMonth}月</div>}
-        previousButtonElement={
-          <SiblingMonthButton direction="previous" handleClick={() => {}} />
-        }
-        nextButtonElement={
-          <SiblingMonthButton direction="next" handleClick={() => {}} />
-        }
+        previousButtonElement={<SiblingMonthButton direction="previous" />}
+        nextButtonElement={<SiblingMonthButton direction="next" />}
       />
 
       <ul className={styles.ul}>
