@@ -1,6 +1,7 @@
 import { CalendarCell } from "./components/features/CalendarCell"
 import { TaskList } from "./components/features/TaskList"
 import { MonthSelector } from "./components/layouts/MonthSelector"
+import { DayCell } from "./components/ui/DayCell"
 import { SiblingMonthButton } from "./components/ui/SiblingMonthButton"
 import { getDates } from "./modules/getDates"
 
@@ -12,6 +13,8 @@ type Props = {
   currentMonth: number
   currentYear: number
 }
+
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 export const CalendarBody: FC<Props> = (props) => {
   const { currentMonth, currentYear } = props
@@ -29,6 +32,9 @@ export const CalendarBody: FC<Props> = (props) => {
       />
 
       <ul className={styles.ul}>
+        {DAYS.map((day) => (
+          <DayCell key={day} day={day} />
+        ))}
         {dates.map((datum) => {
           const { date, taskList } = datum
           const isCurrentMonth = new Date(date).getMonth() + 1 === currentMonth
