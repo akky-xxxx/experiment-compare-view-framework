@@ -10,7 +10,7 @@ export const Calendar: FC = () => {
 
   return (
     <div>
-      <CalendarBody {...props} currentMonth={7} currentYear={2026} />
+      <CalendarBody {...props} />
     </div>
   )
 }
