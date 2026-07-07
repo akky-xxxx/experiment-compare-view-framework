@@ -32,9 +32,8 @@ export const CalendarBody: FC<Props> = (props) => {
       />
 
       <ul className={styles.ul}>
-        {DAYS.map((day) => (
-          <DayCell key={day} day={day} />
-        ))}
+        {DAYS.map((day) => <DayCell key={day} day={day} />)}
+
         {dates.map((date) => {
           const isCurrentMonth = date.getMonth() + 1 === currentMonth
           const stringDate = date.toString()
