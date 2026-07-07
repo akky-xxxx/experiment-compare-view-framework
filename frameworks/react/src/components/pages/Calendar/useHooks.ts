@@ -1,29 +1,7 @@
-import { format } from "date-fns"
-import { useState, useEffect } from "react"
-
-import { apiClient } from "@/utilities/apiClient"
-
-import type { Task } from "@/domains/Task"
+import { useTaskList } from "./modules/useTaskList"
 
 export const useHooks = () => {
-  const [taskList, setTaskList] = useState<Task[]>([])
-
-  useEffect(() => {
-    apiClient.schedules()
-      .then((response) => {
-        setTaskList(response.data.map((schedule) => {
-          const { date, title: task } = schedule
-
-          return {
-            date: format(new Date(date), "yyyy-MM-dd"),
-            task,
-          }
-        }))
-      })
-      .catch((error: unknown) => {
-        console.error(error)
-      })
-  }, [])
+  const taskList = useTaskList()
 
   return {
     taskList,
