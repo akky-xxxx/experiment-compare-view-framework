@@ -1,11 +1,10 @@
-import { isSameDay } from "date-fns"
-
 import { CalendarCell } from "./components/features/CalendarCell"
 import { TaskList } from "./components/features/TaskList"
 import { MonthSelector } from "./components/layouts/MonthSelector"
 import { DayCell } from "./components/ui/DayCell"
 import { SiblingMonthButton } from "./components/ui/SiblingMonthButton"
 import { getDates } from "./modules/getDates"
+import { getTargetTaskList } from "./modules/getTargetTaskList"
 
 import styles from "./index.module.css"
 
@@ -39,12 +38,7 @@ export const CalendarBody: FC<Props> = (props) => {
         {dates.map((date) => {
           const isCurrentMonth = date.getMonth() + 1 === currentMonth
           const stringDate = date.toString()
-          const targetTaskList = taskList.reduce<string[]>((previousValue, task) => {
-            if (isSameDay(task.date, date)) {
-              previousValue.push(task.task)
-            }
-            return previousValue
-          }, [])
+          const targetTaskList = taskList.reduce(getTargetTaskList(date), [])
 
           return (
             <li key={stringDate}>
