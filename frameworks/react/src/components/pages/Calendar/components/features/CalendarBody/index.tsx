@@ -9,12 +9,8 @@ import { getDates } from "./modules/getDates"
 
 import styles from "./index.module.css"
 
+import type { Task } from "@/domains/Task"
 import type { FC } from "react"
-
-type Task = {
-  date: string
-  task: string
-}
 
 type Props = {
   currentMonth: number

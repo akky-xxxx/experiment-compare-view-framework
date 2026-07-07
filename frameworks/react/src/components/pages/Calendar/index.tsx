@@ -7,12 +7,8 @@ import { apiClient } from "@/utilities/apiClient"
 
 import { CalendarBody } from "./components/features/CalendarBody"
 
+import type { Task } from "@/domains/Task"
 import type { FC } from "react"
-
-type Task = {
-  date: string
-  task: string
-}
 
 export const Calendar: FC = () => {
   const [taskList, setTaskList] = useState<Task[]>([])
