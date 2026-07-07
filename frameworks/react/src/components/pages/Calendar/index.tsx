@@ -1,38 +1,16 @@
 "use client"
 
-import { format } from "date-fns"
-import { useState, useEffect } from "react"
-
-import { apiClient } from "@/utilities/apiClient"
-
 import { CalendarBody } from "./components/features/CalendarBody"
+import { useHooks } from "./useHooks"
 
-import type { Task } from "@/domains/Task"
 import type { FC } from "react"
 
 export const Calendar: FC = () => {
-  const [taskList, setTaskList] = useState<Task[]>([])
-
-  useEffect(() => {
-    apiClient.schedules()
-      .then((response) => {
-        setTaskList(response.data.map((schedule) => {
-          const { date, title: task } = schedule
-
-          return {
-            date: format(new Date(date), "yyyy-MM-dd"),
-            task,
-          }
-        }))
-      })
-      .catch((error: unknown) => {
-        console.error(error)
-      })
-  }, [])
+  const props = useHooks()
 
   return (
     <div>
-      <CalendarBody currentMonth={7} currentYear={2026} taskList={taskList} />
+      <CalendarBody {...props} currentMonth={7} currentYear={2026} />
     </div>
   )
 }
