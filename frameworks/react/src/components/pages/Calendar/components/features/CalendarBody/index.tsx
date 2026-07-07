@@ -44,7 +44,7 @@ export const CalendarBody: FC<Props> = (props) => {
               <CalendarCell
                 today={stringDate}
                 isCurrentMonth={isCurrentMonth}
-                taskListComponent={<TaskList taskList={targetTaskList} />}
+                taskListElement={<TaskList taskList={targetTaskList} />}
               />
             </li>
           )

@@ -5,7 +5,7 @@ import type { CSSProperties, FC, ReactElement } from "react"
 type Props = {
   today: string
   isCurrentMonth: boolean
-  taskListComponent: ReactElement
+  taskListElement: ReactElement
 }
 
 const getCellColor = (isCurrentMonth: boolean) => {
@@ -13,7 +13,7 @@ const getCellColor = (isCurrentMonth: boolean) => {
 }
 
 export const CalendarCell: FC<Props> = (props) => {
-  const { today, isCurrentMonth, taskListComponent } = props
+  const { today, isCurrentMonth, taskListElement } = props
   const cellColor = {
     "--opacity": getCellColor(isCurrentMonth),
   } as CSSProperties
@@ -23,7 +23,7 @@ export const CalendarCell: FC<Props> = (props) => {
     <div className={styles.root} style={cellColor}>
       <header className={styles.header}>{currentDate}</header>
 
-      {taskListComponent}
+      {taskListElement}
 
       <button className={styles.cellButton}></button>
     </div>
