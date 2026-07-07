@@ -14,21 +14,23 @@ import type { FC } from "react"
 type Props = {
   currentMonth: number
   currentYear: number
+  handleNextMonthClick: () => void
+  handlePreviousMonthClick: () => void
   taskList: readonly Task[]
 }
 
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 export const CalendarBody: FC<Props> = (props) => {
-  const { currentMonth, currentYear, taskList } = props
+  const { currentMonth, currentYear, handleNextMonthClick, handlePreviousMonthClick, taskList } = props
   const dates = getDates(currentYear, currentMonth)
 
   return (
     <div className={styles.root}>
       <MonthSelector
         monthElement={<div>{currentMonth}月</div>}
-        previousButtonElement={<SiblingMonthButton direction="previous" />}
-        nextButtonElement={<SiblingMonthButton direction="next" />}
+        previousButtonElement={<SiblingMonthButton direction="previous" handleClick={handlePreviousMonthClick} />}
+        nextButtonElement={<SiblingMonthButton direction="next" handleClick={handleNextMonthClick} />}
       />
 
       <ul className={styles.ul}>

@@ -1,3 +1,4 @@
+import { addMonths } from "date-fns"
 import { useState } from "react"
 
 export const useDate = () => {
@@ -5,8 +6,17 @@ export const useDate = () => {
   const currentMonth = today.getMonth() + 1
   const currentYear = today.getFullYear()
 
+  const handleNextMonthClick = () => {
+    setToday((current) => addMonths(current, 1))
+  }
+  const handlePreviousMonthClick = () => {
+    setToday((current) => addMonths(current, -1))
+  }
+
   return {
     currentMonth,
     currentYear,
+    handleNextMonthClick,
+    handlePreviousMonthClick,
   }
 }

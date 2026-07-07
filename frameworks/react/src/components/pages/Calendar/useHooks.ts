@@ -6,11 +6,15 @@ export const useHooks = () => {
   const {
     currentMonth,
     currentYear,
+    handleNextMonthClick,
+    handlePreviousMonthClick,
   } = useDate()
 
   return {
     currentMonth,
     currentYear,
+    handleNextMonthClick,
+    handlePreviousMonthClick,
     taskList,
   }
 };

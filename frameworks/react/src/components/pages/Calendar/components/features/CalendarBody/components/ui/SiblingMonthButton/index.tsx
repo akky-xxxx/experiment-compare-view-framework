@@ -2,10 +2,11 @@ import type { FC } from "react"
 
 type Props = {
   direction: "previous" | "next"
+  handleClick: () => void
 }
 
 export const SiblingMonthButton: FC<Props> = (props) => {
-  const { direction } = props
+  const { direction, handleClick } = props
 
-  return <button>{direction === "previous" ? "◀" : "▶"}</button>
+  return <button onClick={handleClick}>{direction === "previous" ? "◀" : "▶"}</button>
 }
