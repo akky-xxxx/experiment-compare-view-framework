@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import styles from "./index.module.css"
 
 import type { FC } from "react"
@@ -19,7 +21,9 @@ export const TaskList: FC<Props> = (props) => {
 
         return (
           <li key={id} className={styles.li}>
-            <button className={styles.liButton}>{task}</button>
+            <Link href={`/task/${id}`} className={styles.listAnchor}>
+               {task}
+            </Link>
           </li>
         )
       })}

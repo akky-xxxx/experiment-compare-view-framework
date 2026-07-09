@@ -9,9 +9,14 @@
   overflow: hidden;
 }
 
-.liButton {
+.listAnchor {
   width: 100%;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
