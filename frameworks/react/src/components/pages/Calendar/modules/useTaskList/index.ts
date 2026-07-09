@@ -14,9 +14,10 @@ export const useTaskList = () => {
       .then((response) => {
         setTaskList(
           response.data.map((schedule) => {
-            const { date, title: task } = schedule
+            const { id, date, title: task } = schedule
 
             return {
+              id,
               date: format(new Date(date), "yyyy-MM-dd"),
               task,
             }

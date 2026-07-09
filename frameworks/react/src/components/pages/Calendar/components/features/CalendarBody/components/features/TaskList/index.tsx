@@ -1,9 +1,10 @@
 import styles from "./index.module.css"
 
 import type { FC } from "react"
+import type { Task } from "@/domains/Task"
 
 type Props = {
-  taskList: readonly string[]
+  taskList: readonly Pick<Task, "id" | "task">[]
 }
 
 export const TaskList: FC<Props> = (props) => {
@@ -13,11 +14,15 @@ export const TaskList: FC<Props> = (props) => {
 
   return (
     <ul className={styles.root}>
-      {taskList.map((task) => (
-        <li key={task} className={styles.li}>
-          <button className={styles.liButton}>{task}</button>
-        </li>
-      ))}
+      {taskList.map((taskData) => {
+        const { id, task } = taskData
+
+        return (
+          <li key={id} className={styles.li}>
+            <button className={styles.liButton}>{task}</button>
+          </li>
+        )
+      })}
     </ul>
   )
 }
