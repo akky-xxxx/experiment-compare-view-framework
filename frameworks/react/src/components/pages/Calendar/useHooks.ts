@@ -17,4 +17,4 @@ export const useHooks = () => {
     handlePreviousMonthClick,
     taskList,
   }
-};
+}

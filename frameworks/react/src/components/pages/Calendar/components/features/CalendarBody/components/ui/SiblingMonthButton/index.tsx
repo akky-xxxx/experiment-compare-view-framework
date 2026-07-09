@@ -8,5 +8,9 @@ type Props = {
 export const SiblingMonthButton: FC<Props> = (props) => {
   const { direction, handleClick } = props
 
-  return <button onClick={handleClick}>{direction === "previous" ? "◀" : "▶"}</button>
+  return (
+    <button onClick={handleClick}>
+      {direction === "previous" ? "◀" : "▶"}
+    </button>
+  )
 }
