@@ -14,7 +14,7 @@ const NAVIGATION_DATA = [
   },
   {
     label: "Create schedule",
-    href: "/createSchedule",
+    href: "/task/create",
   },
 ] as const
 
