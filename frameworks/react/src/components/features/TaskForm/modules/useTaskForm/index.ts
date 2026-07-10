@@ -7,12 +7,9 @@ import * as z from "zod/mini"
 
 import { FormSchema } from "./schemas/FormSchema"
 
-type Input = {
-  date?: string
-}
+export type Input = { mode: "create"; date?: string } | { mode: "edit"; id: string }
 
 export const useTaskForm = (input: Input) => {
-  const { date } = input
   const { formState, handleSubmit, register, setValues } = useForm<
     z.infer<typeof FormSchema>
   >({
@@ -21,16 +18,29 @@ export const useTaskForm = (input: Input) => {
   const router = useRouter()
   const { isDirty, isValid } = formState
   const isEnabledSubmit = [isDirty, isValid].every(Boolean)
+
   const onSubmit = handleSubmit((data) => {
-    apiClient.postSchedules(data).then(() => {
+    const response =
+      input.mode === "edit"
+        ? apiClient.putScheduleId({ ...data, id: input.id })
+        : apiClient.postSchedules(data)
+
+    response.then(() => {
       router.push("/calendar")
     })
   })
 
   useEffect(() => {
-    if (date === undefined) return
+    if (input.mode === "edit") {
+      apiClient.getScheduleId(input.id).then((response) => {
+        setValues(response.data)
+      })
+      return
+    }
 
-    setValues({ date })
+    if (input.date !== undefined) {
+      setValues({ date: input.date })
+    }
   }, [])
 
   return { isEnabledSubmit, onSubmit, register }
