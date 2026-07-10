@@ -6,7 +6,7 @@ import styles from "./index.module.css"
 import type { CSSProperties, FC, ReactElement } from "react"
 
 type Props = {
-  today: string
+  date: Date
   isCurrentMonth: boolean
   taskListElement: ReactElement
 }
@@ -16,11 +16,10 @@ const getCellColor = (isCurrentMonth: boolean) => {
 }
 
 export const CalendarCell: FC<Props> = (props) => {
-  const { today, isCurrentMonth, taskListElement } = props
+  const { date, isCurrentMonth, taskListElement } = props
   const cellColor = {
     "--opacity": getCellColor(isCurrentMonth),
   } as CSSProperties
-  const date = new Date(today)
   const currentDate = date.getDate()
 
   return (

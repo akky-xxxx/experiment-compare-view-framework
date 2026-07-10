@@ -56,13 +56,12 @@ export const CalendarBody: FC<Props> = (props) => {
 
         {dates.map((date) => {
           const isCurrentMonth = date.getMonth() + 1 === currentMonth
-          const stringDate = date.toString()
           const targetTaskList = taskList.reduce(getTargetTaskList(date), [])
 
           return (
-            <li key={stringDate}>
+            <li key={date.toISOString()}>
               <CalendarCell
-                today={stringDate}
+                date={date}
                 isCurrentMonth={isCurrentMonth}
                 taskListElement={<TaskList taskList={targetTaskList} />}
               />
