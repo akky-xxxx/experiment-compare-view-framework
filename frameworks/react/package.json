@@ -20,11 +20,14 @@
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
+    "@hookform/resolvers": "catalog:react",
     "axios": "catalog:production-infrastructure",
     "date-fns": "catalog:production-infrastructure",
     "next": "catalog:react",
     "react": "catalog:react",
-    "react-dom": "catalog:react"
+    "react-dom": "catalog:react",
+    "react-hook-form": "catalog:react",
+    "zod": "catalog:react"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "catalog:react",
