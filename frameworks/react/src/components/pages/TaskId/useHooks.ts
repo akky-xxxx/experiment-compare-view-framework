@@ -10,14 +10,9 @@ export const useHooks = (input: Input) => {
   const [task, setTask] = useState<ScheduleIdResponse | null>(null)
 
   useEffect(() => {
-    apiClient
-      .getScheduleId(id)
-      .then((response) => {
-        setTask(response.data)
-      })
-      .catch((error: unknown) => {
-        console.log(error)
-      })
+    apiClient.getScheduleId(id).then((response) => {
+      setTask(response.data)
+    })
   }, [])
 
   return { task }

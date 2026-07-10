@@ -8,6 +8,16 @@ const axiosInstance = axios.create({
   baseURL: "http://localhost:4000",
 })
 
+axiosInstance.interceptors.response.use(
+  (axiosResponse) => {
+    return axiosResponse
+  },
+  (error: unknown) => {
+    console.error(error)
+    return Promise.reject(error)
+  },
+)
+
 export const apiClient = {
   getSchedules: () => axiosInstance.get<SchedulesResponse>("/schedules"),
   getScheduleId: (id: string) =>

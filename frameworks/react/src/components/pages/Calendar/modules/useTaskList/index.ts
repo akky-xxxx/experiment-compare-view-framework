@@ -9,24 +9,19 @@ export const useTaskList = () => {
   const [taskList, setTaskList] = useState<Task[]>([])
 
   useEffect(() => {
-    apiClient
-      .getSchedules()
-      .then((response) => {
-        setTaskList(
-          response.data.map((schedule) => {
-            const { id, date, title: task } = schedule
+    apiClient.getSchedules().then((response) => {
+      setTaskList(
+        response.data.map((schedule) => {
+          const { id, date, title: task } = schedule
 
-            return {
-              id,
-              date: format(new Date(date), "yyyy-MM-dd"),
-              task,
-            }
-          }),
-        )
-      })
-      .catch((error: unknown) => {
-        console.error(error)
-      })
+          return {
+            id,
+            date: format(new Date(date), "yyyy-MM-dd"),
+            task,
+          }
+        }),
+      )
+    })
   }, [])
 
   return taskList

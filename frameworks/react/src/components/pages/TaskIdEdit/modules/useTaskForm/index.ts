@@ -30,20 +30,12 @@ export const useTaskForm = (input: Input) => {
       .then(() => {
         router.push("/calendar")
       })
-      .catch((error: unknown) => {
-        console.log(error)
-      })
   })
 
   useEffect(() => {
-    apiClient
-      .getScheduleId(id)
-      .then((response) => {
-        setValues(response.data)
-      })
-      .catch((error: unknown) => {
-        console.log(error)
-      })
+    apiClient.getScheduleId(id).then((response) => {
+      setValues(response.data)
+    })
   }, [])
 
   return { isEnabledSubmit, onSubmit, register, setValues }
