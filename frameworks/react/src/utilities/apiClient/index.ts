@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 })
 
 export const apiClient = {
-  schedules: () => axiosInstance.get<SchedulesResponse>("/schedules"),
-  scheduleId: (id: string) =>
+  getSchedules: () => axiosInstance.get<SchedulesResponse>("/schedules"),
+  getScheduleId: (id: string) =>
     axiosInstance.get<ScheduleIdResponse>(`/schedules/${id}`),
 } as const

@@ -10,7 +10,7 @@ export const useTaskList = () => {
 
   useEffect(() => {
     apiClient
-      .schedules()
+      .getSchedules()
       .then((response) => {
         setTaskList(
           response.data.map((schedule) => {

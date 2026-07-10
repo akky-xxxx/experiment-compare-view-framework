@@ -29,7 +29,7 @@ export const useHooks = (input: Input) => {
 
   useEffect(() => {
     apiClient
-      .scheduleId(id)
+      .getScheduleId(id)
       .then((response) => {
         setValues(response.data)
       })
