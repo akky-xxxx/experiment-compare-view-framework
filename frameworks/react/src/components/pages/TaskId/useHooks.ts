@@ -1,15 +1,24 @@
-import type { Task } from "@/domains/Task"
-import {useEffect} from "react"
-import {apiClient} from "@/utilities/apiClient"
+import { useEffect, useState } from "react"
+import { apiClient } from "@/utilities/apiClient"
 
-type Input = Pick<Task, "id">
+import { ScheduleIdResponse } from "@/utilities/apiClient/types/ScheduleIdResponse"
+
+type Input = Pick<ScheduleIdResponse, "id">
 
 export const useHooks = (input: Input) => {
   const { id } = input
+  const [task, setTask] = useState<ScheduleIdResponse | null>(null)
 
   useEffect(() => {
-    apiClient.schedules().then((response) => {
-      const targetTask = response.data.find((task) => task.id === id) ?? null
-    })
-  }, []);
+    apiClient
+      .scheduleId(id)
+      .then((response) => {
+        setTask(response.data)
+      })
+      .catch((error: unknown) => {
+        console.log(error)
+      })
+  }, [])
+
+  return { task }
 }
