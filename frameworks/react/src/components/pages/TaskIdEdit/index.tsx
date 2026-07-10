@@ -13,27 +13,36 @@ type Props = {
 }
 
 export const TaskIdEdit: FC<Props> = (props) => {
-  const { task } = useHooks(props)
-
-  if (task === null) return null
-
-  const { body, date, id, title } = task
+  const { id } = props
+  const { isEnabledSubmit, onSubmit, register } = useHooks(props)
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <TaskDetail
-        bodyNode={<textarea className={styles.inputElement}>{body}</textarea>}
+        bodyNode={
+          <textarea className={styles.inputElement} {...register("body")} />
+        }
         dateNode={
-          <input type="text" value={date} className={styles.inputElement} />
+          <input
+            type="text"
+            className={styles.inputElement}
+            {...register("date")}
+          />
         }
         idNode={id}
         titleNode={
-          <input type="text" value={title} className={styles.inputElement} />
+          <input
+            type="text"
+            className={styles.inputElement}
+            {...register("title")}
+          />
         }
       />
 
       <div className={styles.registerWrapper}>
-        <button type="submit">Register</button>
+        <button disabled={!isEnabledSubmit} type="submit">
+          Register
+        </button>
       </div>
     </form>
   )
