@@ -1,4 +1,4 @@
-.dl {
+.root {
   display: grid;
   row-gap: 8px;
 }
