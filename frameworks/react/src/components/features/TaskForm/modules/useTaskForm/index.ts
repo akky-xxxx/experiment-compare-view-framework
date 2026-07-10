@@ -7,7 +7,9 @@ import * as z from "zod/mini"
 
 import { FormSchema } from "./schemas/FormSchema"
 
-export type Input = { mode: "create"; date?: string } | { mode: "edit"; id: string }
+export type Input =
+  | { mode: "create"; date?: string }
+  | { mode: "edit"; id: string }
 
 export const useTaskForm = (input: Input) => {
   const { formState, handleSubmit, register, setValues } = useForm<
