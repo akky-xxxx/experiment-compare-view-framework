@@ -12,12 +12,12 @@ export const useTaskList = () => {
     apiClient.getSchedules().then((response) => {
       setTaskList(
         response.data.map((schedule) => {
-          const { id, date, title: task } = schedule
+          const { id, date, title } = schedule
 
           return {
             id,
             date: formatScheduleDate(new Date(date)),
-            task,
+            title,
           }
         }),
       )

@@ -6,7 +6,7 @@ import type { FC } from "react"
 import type { Task } from "@/domains/Task"
 
 type Props = {
-  taskList: readonly Pick<Task, "id" | "task">[]
+  taskList: readonly Pick<Task, "id" | "title">[]
 }
 
 export const TaskList: FC<Props> = (props) => {
@@ -17,12 +17,12 @@ export const TaskList: FC<Props> = (props) => {
   return (
     <ul className={styles.root}>
       {taskList.map((taskData) => {
-        const { id, task } = taskData
+        const { id, title } = taskData
 
         return (
           <li key={id} className={styles.li}>
             <Link href={`/task/${id}`} className={styles.listAnchor}>
-              {task}
+              {title}
             </Link>
           </li>
         )
