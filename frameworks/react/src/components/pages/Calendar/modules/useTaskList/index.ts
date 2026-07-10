@@ -1,7 +1,7 @@
-import { format } from "date-fns"
 import { useState, useEffect } from "react"
 
 import { apiClient } from "@/utilities/apiClient"
+import { formatScheduleDate } from "@/utilities/formatScheduleDate"
 
 import type { Task } from "@/domains/Task"
 
@@ -16,7 +16,7 @@ export const useTaskList = () => {
 
           return {
             id,
-            date: format(new Date(date), "yyyy-MM-dd"),
+            date: formatScheduleDate(new Date(date)),
             task,
           }
         }),

@@ -1,5 +1,6 @@
-import { format } from "date-fns"
 import Link from "next/link"
+
+import { formatScheduleDate } from "@/utilities/formatScheduleDate"
 
 import styles from "./index.module.css"
 
@@ -29,7 +30,7 @@ export const CalendarCell: FC<Props> = (props) => {
       {taskListElement}
 
       <Link
-        href={`/task/create?date=${format(date, "yyyy-MM-dd")}`}
+        href={`/task/create?date=${formatScheduleDate(date)}`}
         className={styles.cellLink}
       />
     </div>
