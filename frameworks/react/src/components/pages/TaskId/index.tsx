@@ -31,7 +31,7 @@ export const TaskId: FC<Props> = (props) => {
       />
 
       <div className={styles.editWrapper}>
-        <Link href={`/task/edit/${id}`}>edit</Link>
+        <Link href={`/task/${id}/edit`}>edit</Link>
       </div>
     </div>
   )
