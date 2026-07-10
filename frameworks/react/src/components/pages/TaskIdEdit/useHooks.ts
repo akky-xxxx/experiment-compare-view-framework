@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { apiClient } from "@/utilities/apiClient"
+import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod/mini"
@@ -20,11 +21,21 @@ export const useHooks = (input: Input) => {
   const { formState, handleSubmit, register, setValues } = useForm<Schema>({
     resolver: zodResolver(schema),
   })
+  const router = useRouter()
   const { isDirty, isValid } = formState
   const isEnabledSubmit = [isDirty, isValid].every(Boolean)
   const onSubmit = handleSubmit((data) => {
-    // TODO: implement submit logic
-    console.log(`submit: ${JSON.stringify(data)}`)
+    apiClient
+      .putScheduleId({
+        ...data,
+        id,
+      })
+      .then(() => {
+        router.push("/calendar")
+      })
+      .catch((error: unknown) => {
+        console.log(error)
+      })
   })
 
   useEffect(() => {

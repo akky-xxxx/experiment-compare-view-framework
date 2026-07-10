@@ -1,6 +1,7 @@
 import axios from "axios"
 
 import type { SchedulesResponse } from "./types/SchedulesResponse"
+import type { ScheduleIdRequest } from "./types/ScheduleIdRequest"
 import type { ScheduleIdResponse } from "./types/ScheduleIdResponse"
 
 const axiosInstance = axios.create({
@@ -11,4 +12,6 @@ export const apiClient = {
   getSchedules: () => axiosInstance.get<SchedulesResponse>("/schedules"),
   getScheduleId: (id: string) =>
     axiosInstance.get<ScheduleIdResponse>(`/schedules/${id}`),
+  putScheduleId: (requestBody: ScheduleIdRequest) =>
+    axiosInstance.put(`/schedules/${requestBody.id}`, requestBody),
 } as const
