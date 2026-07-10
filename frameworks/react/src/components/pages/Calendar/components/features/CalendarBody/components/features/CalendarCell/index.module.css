@@ -16,10 +16,8 @@
   pointer-events: none;
 }
 
-.cellButton {
+.cellLink {
   position: absolute;
   inset: 0;
   z-index: 10;
-  border: none;
-  background-color: transparent;
 }

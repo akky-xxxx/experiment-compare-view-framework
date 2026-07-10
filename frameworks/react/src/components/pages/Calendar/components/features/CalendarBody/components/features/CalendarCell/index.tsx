@@ -1,3 +1,6 @@
+import { format } from "date-fns"
+import Link from "next/link"
+
 import styles from "./index.module.css"
 
 import type { CSSProperties, FC, ReactElement } from "react"
@@ -17,7 +20,8 @@ export const CalendarCell: FC<Props> = (props) => {
   const cellColor = {
     "--opacity": getCellColor(isCurrentMonth),
   } as CSSProperties
-  const currentDate = new Date(today).getDate()
+  const date = new Date(today)
+  const currentDate = date.getDate()
 
   return (
     <div className={styles.root} style={cellColor}>
@@ -25,7 +29,10 @@ export const CalendarCell: FC<Props> = (props) => {
 
       {taskListElement}
 
-      <button className={styles.cellButton}></button>
+      <Link
+        href={`/task/create?date=${format(date, "yyyy-MM-dd")}`}
+        className={styles.cellLink}
+      />
     </div>
   )
 }
