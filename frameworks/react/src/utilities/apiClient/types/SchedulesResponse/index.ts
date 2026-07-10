@@ -1,8 +1,3 @@
-type Schedule = {
-  body: string
-  date: string
-  id: string
-  title: string
-}
+import type { ScheduleIdResponse } from "../ScheduleIdResponse"
 
-export type SchedulesResponse = Schedule[]
+export type SchedulesResponse = ScheduleIdResponse[]
