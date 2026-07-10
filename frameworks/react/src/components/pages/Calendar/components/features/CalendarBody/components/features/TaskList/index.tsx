@@ -22,7 +22,7 @@ export const TaskList: FC<Props> = (props) => {
         return (
           <li key={id} className={styles.li}>
             <Link href={`/task/${id}`} className={styles.listAnchor}>
-               {task}
+              {task}
             </Link>
           </li>
         )

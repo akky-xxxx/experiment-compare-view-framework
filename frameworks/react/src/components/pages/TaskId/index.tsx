@@ -1,5 +1,8 @@
 "use client"
 
+import Link from "next/link"
+import { Fragment } from "react"
+
 import { useHooks } from "./useHooks"
 
 import styles from "./index.module.css"
@@ -11,25 +14,44 @@ type Props = {
 }
 
 export const TaskId: FC<Props> = (props) => {
-  const { id } = props
-
-  const { task } = useHooks({ id })
+  const { task } = useHooks(props)
 
   if (task === null) return null
 
+  const { body, date, id, title } = task
+  const taskData = [
+    {
+      label: "ID",
+      data: id,
+    },
+    {
+      label: "Title",
+      data: title,
+    },
+    {
+      label: "Date",
+      data: date,
+    },
+    {
+      label: "Body",
+      data: body,
+    },
+  ] as const satisfies Record<"label" | "data", string>[]
+
   return (
-    <dl className={styles.root}>
-      <dt>ID</dt>
-      <dd>{task.id}</dd>
+    <div>
+      <dl className={styles.dl}>
+        {taskData.map((record) => (
+          <Fragment key={record.label}>
+            <dt>{record.label}</dt>
+            <dd>{record.data}</dd>
+          </Fragment>
+        ))}
+      </dl>
 
-      <dt>title</dt>
-      <dd>{task.title}</dd>
-
-      <dt>date</dt>
-      <dd>{task.date}</dd>
-
-      <dt>body</dt>
-      <dd>{task.body}</dd>
-    </dl>
+      <div className={styles.editWrapper}>
+        <Link href={`/task/edit/${id}`}>edit</Link>
+      </div>
+    </div>
   )
 }

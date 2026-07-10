@@ -1,5 +1,9 @@
-.root {
+.dl {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 12px;
+}
+
+.editWrapper {
+  margin-top: 16px;
 }
