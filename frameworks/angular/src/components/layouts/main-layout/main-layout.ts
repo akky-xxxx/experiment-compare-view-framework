@@ -8,5 +8,5 @@ import { NgTemplateOutlet } from "@angular/common";
   styleUrls: ["./main-layout.css"],
 })
 export class MainLayout {
-  protected readonly headerSlot = input.required<TemplateRef<unknown>>();
+  public readonly headerSlot = input.required<TemplateRef<unknown>>();
 }

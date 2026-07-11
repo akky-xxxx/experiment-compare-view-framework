@@ -13,5 +13,5 @@ export class CalendarBody {
   public readonly currentMonth = input.required<number>();
   public readonly currentYear = input.required<number>();
   protected readonly DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] as const;
-  public readonly dates = computed(() => getDates(this.currentYear(), this.currentMonth()));
+  protected readonly dates = computed(() => getDates(this.currentYear(), this.currentMonth()));
 }
