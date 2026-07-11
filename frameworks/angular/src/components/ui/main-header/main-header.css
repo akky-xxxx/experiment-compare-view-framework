@@ -1,0 +1,9 @@
+.header {
+  padding: 12px;
+  border-bottom: 1px solid var(--foreground);
+}
+
+.ul {
+  display: flex;
+  column-gap: 8px;
+}
