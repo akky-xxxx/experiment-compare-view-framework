@@ -14,7 +14,7 @@ export const MainLayout: FcWithChildren<Props> = (props) => {
     <div className={styles.root}>
       <div className={styles.headerWrapper}>{headerComponent}</div>
 
-      <main className={styles.mainWrapper}>{children}</main>
+      <main className={styles.main}>{children}</main>
     </div>
   )
 }
