@@ -15,7 +15,7 @@ const getCellColor = (isCurrentMonth: boolean) => {
   imports: [RouterLink, NgTemplateOutlet],
 })
 export class CalendarCell {
-  public readonly date= input.required<Date>();
+  public readonly date = input.required<Date>();
   public readonly isCurrentMonth = input.required<boolean>();
   public readonly taskListSlot = input.required<TemplateRef<unknown>>();
 
