@@ -15,15 +15,15 @@ const getCellColor = (isCurrentMonth: boolean) => {
   imports: [RouterLink, NgTemplateOutlet],
 })
 export class CalendarCell {
-  public readonly date = input.required<Date>();
+  public readonly date= input.required<Date>();
   public readonly isCurrentMonth = input.required<boolean>();
   public readonly taskListSlot = input.required<TemplateRef<unknown>>();
 
-  protected cellColor = computed(() => ({
+  protected readonly cellColor = computed(() => ({
     "--opacity": getCellColor(this.isCurrentMonth()),
   }));
-  protected currentDate = computed(() => this.date().getDate());
-  protected queryParameters = computed(() => ({
+  protected readonly currentDate = computed(() => this.date().getDate());
+  protected readonly queryParameters = computed(() => ({
     date: formatScheduleDate(this.date()),
   }));
 }
