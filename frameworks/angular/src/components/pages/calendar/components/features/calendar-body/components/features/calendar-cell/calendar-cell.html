@@ -4,8 +4,9 @@
   <ng-container *ngTemplateOutlet="taskListSlot()" />
 
   <a
-    routerLink="/task/create?date=${formatScheduleDate(date)}"
-    class="cellLink"
     [attr.aria-label]="currentDate() + '日のタスクを作成'"
+    [queryParams]="queryParameters()"
+    class="cellLink"
+    routerLink="/task/create"
   ></a>
 </div>
