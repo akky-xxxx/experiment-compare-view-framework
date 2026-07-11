@@ -236,6 +236,9 @@ importers:
       axios:
         specifier: catalog:production-infrastructure
         version: 1.18.1
+      date-fns:
+        specifier: catalog:production-infrastructure
+        version: 4.4.0
       rxjs:
         specifier: catalog:angular
         version: 7.8.2

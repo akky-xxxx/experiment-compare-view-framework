@@ -26,6 +26,7 @@
     "@angular/platform-browser": "catalog:angular",
     "@angular/router": "catalog:angular",
     "axios": "catalog:production-infrastructure",
+    "date-fns": "catalog:production-infrastructure",
     "rxjs": "catalog:angular",
     "tslib": "catalog:angular"
   },
