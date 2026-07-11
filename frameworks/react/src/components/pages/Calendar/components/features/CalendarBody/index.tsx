@@ -51,7 +51,9 @@ export const CalendarBody: FC<Props> = (props) => {
 
       <ul className={styles.ul}>
         {DAYS.map((day) => (
-          <DayCell key={day} day={day} />
+          <li key={day}>
+            <DayCell day={day} />
+          </li>
         ))}
 
         {dates.map((date) => {

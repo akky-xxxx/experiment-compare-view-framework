@@ -9,5 +9,5 @@ type Props = {
 export const DayCell: FC<Props> = (props) => {
   const { day } = props
 
-  return <li className={styles.root}>{day}</li>
+  return <div className={styles.root}>{day}</div>
 }
