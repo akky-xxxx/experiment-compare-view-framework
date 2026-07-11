@@ -1,3 +1,7 @@
 <div class="root">
-  <ul class="ul"></ul>
+  <ul class="ul">
+    @for (day of DAYS; track day) {
+      <day-cell [day]="day" />
+    }
+  </ul>
 </div>
