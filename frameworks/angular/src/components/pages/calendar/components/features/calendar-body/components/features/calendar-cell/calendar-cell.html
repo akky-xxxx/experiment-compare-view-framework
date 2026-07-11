@@ -1,0 +1,11 @@
+<div class="root" [style]="cellColor()">
+  <header class="header">{{ currentDate() }}</header>
+
+  <ng-container *ngTemplateOutlet="taskListSlot()" />
+
+  <a
+    routerLink="/task/create?date=${formatScheduleDate(date)}"
+    class="cellLink"
+    [attr.aria-label]="currentDate() + '日のタスクを作成'"
+  ></a>
+</div>

@@ -1,0 +1,23 @@
+.root {
+  background-color: var(--secondary-background);
+  position: relative;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  opacity: var(--opacity);
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.header {
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.cellLink {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
