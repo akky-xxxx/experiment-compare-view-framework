@@ -14,6 +14,12 @@ module.exports = defineConfig([
       angular.configs.tsRecommended,
     ],
     processor: angular.processInlineTemplates,
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
+    },
     rules: {
       "@angular-eslint/directive-selector": [
         "error",
@@ -31,6 +37,9 @@ module.exports = defineConfig([
           style: "kebab-case",
         },
       ],
+      "@typescript-eslint/prefer-readonly": "error",
+      "@typescript-eslint/explicit-member-accessibility": "error",
+      "@angular-eslint/prefer-output-readonly": "error",
     },
   },
   {
