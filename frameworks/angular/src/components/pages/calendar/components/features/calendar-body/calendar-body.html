@@ -1,7 +1,3 @@
-<ng-template #taskListTemplate>
-  <!-- TODO: TaskList を作ったらここに差し込む -->
-</ng-template>
-
 <div class="root">
   <ul class="ul">
     @for (day of DAYS; track day) {
@@ -13,10 +9,11 @@
     @for (date of dates(); track date) {
       <li>
         <calendar-cell
-          [taskListSlot]="taskListTemplate"
           [date]="date"
           [isCurrentMonth]="date.getMonth() + 1 === this.currentMonth()"
-        />
+        >
+          <!-- TODO: TaskList を作ったらここに差し込む -->
+        </calendar-cell>
       </li>
     }
   </ul>

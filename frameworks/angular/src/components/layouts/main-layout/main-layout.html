@@ -1,6 +1,6 @@
 <div class="root">
   <div class="headerWrapper">
-    <ng-container *ngTemplateOutlet="headerSlot()" />
+    <ng-content select="[slot=header]" />
   </div>
 
   <main class="main">

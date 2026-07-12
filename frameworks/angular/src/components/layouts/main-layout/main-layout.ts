@@ -1,12 +1,8 @@
-import { Component, TemplateRef, input } from "@angular/core";
-import { NgTemplateOutlet } from "@angular/common";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "main-layout",
-  imports: [NgTemplateOutlet],
   templateUrl: "./main-layout.html",
   styleUrls: ["./main-layout.css"],
 })
-export class MainLayout {
-  public readonly headerSlot = input.required<TemplateRef<unknown>>();
-}
+export class MainLayout {}

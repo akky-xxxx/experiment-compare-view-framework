@@ -1,7 +1,4 @@
-<ng-template #headerTemplate>
-  <main-header />
-</ng-template>
-
-<main-layout [headerSlot]="headerTemplate">
+<main-layout>
+  <main-header slot="header" />
   <router-outlet />
 </main-layout>

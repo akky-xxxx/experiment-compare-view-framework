@@ -1,7 +1,7 @@
 <div class="root" [style]="cellColor()">
   <header class="header">{{ currentDate() }}</header>
 
-  <ng-container *ngTemplateOutlet="taskListSlot()" />
+  <ng-content />
 
   <a
     [attr.aria-label]="currentDate() + '日のタスクを作成'"

@@ -1,5 +1,4 @@
-import { Component, computed, input, TemplateRef } from "@angular/core";
-import { NgTemplateOutlet } from "@angular/common";
+import { Component, computed, input } from "@angular/core";
 import { RouterLink } from "@angular/router";
 
 import { formatScheduleDate } from "../../../../../../../../../utilities/formatScheduleDate";
@@ -12,12 +11,11 @@ const getCellColor = (isCurrentMonth: boolean) => {
   selector: "calendar-cell",
   templateUrl: "./calendar-cell.html",
   styleUrls: ["./calendar-cell.css"],
-  imports: [RouterLink, NgTemplateOutlet],
+  imports: [RouterLink],
 })
 export class CalendarCell {
   public readonly date = input.required<Date>();
   public readonly isCurrentMonth = input.required<boolean>();
-  public readonly taskListSlot = input.required<TemplateRef<unknown>>();
 
   protected readonly cellColor = computed(() => ({
     "--opacity": getCellColor(this.isCurrentMonth()),
