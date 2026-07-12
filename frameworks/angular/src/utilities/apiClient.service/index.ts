@@ -28,9 +28,6 @@ export class ApiClientService {
   }
 
   public putScheduleId(requestBody: ScheduleIdRequest) {
-    return this.http.put<ScheduleIdResponse>(
-      `/schedules/${requestBody.id}`,
-      requestBody,
-    );
+    return this.http.put<ScheduleIdResponse>(`/schedules/${requestBody.id}`, requestBody);
   }
 }

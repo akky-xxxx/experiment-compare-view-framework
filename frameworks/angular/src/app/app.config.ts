@@ -10,9 +10,7 @@ import { errorLoggingInterceptor } from "../utilities/apiClient.service/intercep
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(
-      withInterceptors([baseUrlInterceptor, errorLoggingInterceptor]),
-    ),
+    provideHttpClient(withInterceptors([baseUrlInterceptor, errorLoggingInterceptor])),
     provideRouter(routes),
   ],
 };
