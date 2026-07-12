@@ -22,11 +22,8 @@
 
     @for (date of dates(); track date) {
       <li>
-        <calendar-cell
-          [date]="date"
-          [isCurrentMonth]="date.getMonth() + 1 === this.currentMonth()"
-        >
-          <!-- TODO: TaskList を作ったらここに差し込む -->
+        <calendar-cell [date]="date" [isCurrentMonth]="date.getMonth() + 1 === this.currentMonth()">
+          <task-list [taskList]="getCellTaskList(date)" />
         </calendar-cell>
       </li>
     }
