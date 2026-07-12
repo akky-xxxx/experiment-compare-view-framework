@@ -233,9 +233,6 @@ importers:
       '@angular/router':
         specifier: catalog:angular
         version: 22.0.4(@angular/common@22.0.4(@angular/core@22.0.4(@angular/compiler@22.0.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.0.4(@angular/compiler@22.0.4)(rxjs@7.8.2))(@angular/platform-browser@22.0.4(@angular/common@22.0.4(@angular/core@22.0.4(@angular/compiler@22.0.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.0.4(@angular/compiler@22.0.4)(rxjs@7.8.2)))(rxjs@7.8.2)
-      axios:
-        specifier: catalog:production-infrastructure
-        version: 1.18.1
       date-fns:
         specifier: catalog:production-infrastructure
         version: 4.4.0
