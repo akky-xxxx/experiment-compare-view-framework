@@ -1,2 +1,6 @@
-<!-- TODO: 年月を state に置き換える -->
-<calendar-body [currentYear]="2026" [currentMonth]="7" />
+<calendar-body
+  [currentYear]="currentYear()"
+  [currentMonth]="currentMonth()"
+  (handleNextMonthClick)="handleNextMonthClick()"
+  (handlePreviousMonthClick)="handlePreviousMonthClick()"
+/>
