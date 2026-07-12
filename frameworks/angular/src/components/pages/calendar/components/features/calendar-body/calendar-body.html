@@ -1,4 +1,18 @@
 <div class="root">
+  <month-selector>
+    <sibling-month-button
+      slot="previous-button"
+      direction="previous"
+      (handleClick)="handlePreviousMonthClick.emit()"
+    />
+    <div slot="month">{{ currentMonth() }}月</div>
+    <sibling-month-button
+      slot="next-button"
+      direction="next"
+      (handleClick)="handleNextMonthClick.emit()"
+    />
+  </month-selector>
+
   <ul class="ul">
     @for (day of DAYS; track day) {
       <li>
