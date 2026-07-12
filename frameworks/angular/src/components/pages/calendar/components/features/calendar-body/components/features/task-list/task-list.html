@@ -1,0 +1,9 @@
+@if (taskList().length > 0) {
+  <ul class="root">
+    @for (task of taskList(); track task.id) {
+      <li class="li">
+        <a [routerLink]="['/task', task.id]" class="listAnchor">{{ task.title }}</a>
+      </li>
+    }
+  </ul>
+}
