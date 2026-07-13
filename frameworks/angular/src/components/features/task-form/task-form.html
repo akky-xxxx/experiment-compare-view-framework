@@ -1,0 +1,11 @@
+<form [formGroup]="taskForm.form" (submit)="taskForm.onSubmit($event)">
+  <task-detail [id]="idNode()">
+    <input slot="title" type="text" class="inputElement" formControlName="title" />
+    <input slot="date" type="text" class="inputElement" formControlName="date" />
+    <textarea slot="body" class="inputElement" formControlName="body"></textarea>
+  </task-detail>
+
+  <div class="registerWrapper">
+    <button type="submit" [disabled]="!taskForm.isEnabledSubmit()">Register</button>
+  </div>
+</form>
