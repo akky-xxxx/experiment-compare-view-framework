@@ -1,0 +1,13 @@
+@if (task(); as taskValue) {
+  <div>
+    <task-detail [id]="taskValue.id">
+      <span slot="title">{{ taskValue.title }}</span>
+      <span slot="date">{{ taskValue.date }}</span>
+      <span slot="body">{{ taskValue.body }}</span>
+    </task-detail>
+
+    <div class="editWrapper">
+      <a [routerLink]="['/task', taskValue.id, 'edit']">edit</a>
+    </div>
+  </div>
+}
