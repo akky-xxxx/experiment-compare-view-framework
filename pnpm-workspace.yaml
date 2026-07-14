@@ -65,6 +65,19 @@ catalogs:
     vite: 8.1.0
     vitest: 4.1.9
     zod: 4.4.3
+  vue:
+    '@storybook/vue3-vite': 10.4.6
+    '@vee-validate/zod': 4.15.1
+    '@vitejs/plugin-vue': 6.0.7
+    '@vue/eslint-config-typescript': 14.9.0
+    eslint-plugin-vue: 10.9.2
+    postcss-html: 1.8.1
+    stylelint-config-html: 1.1.0
+    vee-validate: 4.15.1
+    vue: 3.5.39
+    vue-router: 5.1.0
+    vue-tsc: 3.3.6
+    zod: 3.25.76
 
 minimumReleaseAge: 10080
 
