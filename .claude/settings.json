@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git status:*)",
+      "Bash(pnpm --filter angular fix)",
+      "Bash(pnpm --filter angular lint)",
+      "Bash(pnpm --filter angular start)",
+      "Bash(pnpm --filter angular test)",
+      "Bash(pnpm --filter react build)",
+      "Bash(pnpm --filter react dev)",
+      "Bash(pnpm --filter react fix)",
+      "Bash(pnpm --filter react lint)",
+      "Bash(pnpm --filter sample-api act)",
+      "Bash(pnpm --filter sample-api gen)",
+      "Bash(pnpm --filter sample-api serve)",
+      "Bash(pnpm install)"
+    ],
+    "ask": [
+      "Bash(pnpm add:*)",
+      "Bash(pnpm dlx:*)",
+      "Bash(pnpm exec:*)",
+      "Bash(pnpm link:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm unlink:*)",
+      "Bash(pnpm update:*)"
+    ],
+    "deny": [
+      "Bash(curl:*)",
+      "Bash(git push:*)",
+      "Bash(node -e:*)",
+      "Bash(node -p:*)",
+      "Bash(npx:*)",
+      "Bash(pnpm publish:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(wget:*)",
+      "Edit(.claude/settings.local.json)",
+      "Write(.claude/settings.local.json)"
+    ]
+  }
+}
