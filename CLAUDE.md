@@ -14,10 +14,11 @@ pnpm workspace (`pnpm-workspace.yaml`) を使用し、パッケージは `framew
 
 - `frameworks/react` — Next.js 16 (App Router) アプリ
 - `frameworks/angular` — Angular 22 アプリ (スタンドアロンコンポーネント)
+- `frameworks/vue` — Vue 3 (Vite + vue-router) アプリ
 - `server/sample-api` — json-server によるモック API を生成・提供 (ポート 4000)。
 
 依存パッケージのバージョンは `pnpm-workspace.yaml` の `catalog:` および名前付きカタログ
-(`production-infrastructure`、`angular`、`react`) に集約管理されています。新しい依存を追加する際は、
+(`production-infrastructure`、`angular`、`react`、`vue`) に集約管理されています。新しい依存を追加する際は、
 各パッケージの `package.json` に直接バージョンを固定するのではなく、必ずカタログ経由
 (`"catalog:react"` など) で追加してください。
 
@@ -42,6 +43,13 @@ pnpm --filter react fix             # 上記の自動修正版
 pnpm --filter angular start         # ng serve
 pnpm --filter angular test          # ng test (Vitest)
 pnpm --filter angular lint          # ng lint + prettier + stylelint + sort-package-json (並列実行)
+
+# vue アプリ (frameworks/vue)
+pnpm --filter vue dev               # Vite の開発サーバー
+pnpm --filter vue build             # 型チェック + 本番ビルド
+pnpm --filter vue storybook         # Storybook の開発サーバー (:6006)
+pnpm --filter vue lint              # eslint + prettier + stylelint + sort-package-json (並列実行)
+pnpm --filter vue fix               # 上記の自動修正版
 ```
 
 ## 共通ルール
@@ -55,7 +63,7 @@ husky の `commit-msg` フック (`commitlint.config.cjs`) 経由で commitlint 
 
 - 形式: `type(scope): subject`
 - `type` は次のいずれか: `chore, feat, fix, docs, style, refactor, test, revert`
-- `scope` は**必須**（空不可）で、次のいずれか: `root, angular, react, server` (または `*`)
+- `scope` は**必須**（空不可）で、次のいずれか: `root, angular, react, vue, server` (または `*`)
 - 本文がある場合は、件名との間に空行が必要
 
 
@@ -66,6 +74,10 @@ husky の `commit-msg` フック (`commitlint.config.cjs`) 経由で commitlint 
 ## Angular アプリのアーキテクチャ (`frameworks/angular/src`)
 
 `.claude/rules/angular/base.md` を参照
+
+## Vue アプリのアーキテクチャ (`frameworks/vue/src`)
+
+`.claude/rules/vue/base.md` を参照
 
 ## sample-api のアーキテクチャ (`server/sample-api/src`)
 
